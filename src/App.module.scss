@@ -1,0 +1,15 @@
+.app {
+  display: grid;
+  grid-template-areas: 's u';
+  grid-template-columns: 1fr 4fr;
+  text-align: center;
+}
+
+.side {
+  grid-area: s;
+}
+
+.content {
+  grid-area: u;
+}
+
