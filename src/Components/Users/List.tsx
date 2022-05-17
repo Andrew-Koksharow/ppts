@@ -1,26 +1,14 @@
-import React, { useEffect } from "react";
-
-
+import react from "react";
 import User from "./User";
 
-
-
-
-const List = (props: any) => {
-    debugger
-    let arr = [];
-    for (let i = 0; i < props.users.length; i++) {
-        arr.push(props.users[i])
-    }
-
+const List = ({users}:[]) => {
+       
     return (
         <div>
             <h3>Список пользователей</h3>
             <div>
-
-
-
-
+                {users.map(i  => 
+                    <div>{i.name}</div>)}
 
             </div>
         </div>
