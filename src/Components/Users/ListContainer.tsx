@@ -1,14 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getUsers, getUsersThunkCreator, InitialStateType } from "../../redux/reducers/users-reducer";
+import { getUsers, getUsersThunkCreator, UserType } from "../../redux/reducers/users-reducer";
+import { AppStatetype } from "../../redux/redux-store";
+
 import List from "./List";
 
+type PropsType = {
+    getUsersThunkCreator: any
+    users: Array<UserType>
+}
 
-
-class  listApiComponent extends React.Component<>  {
-    constructor(props:[]) {
-        super(props);
-    }
+class listApiComponent extends React.Component<PropsType> {
+    // constructor(props:PropsType) {
+    //     super(props);
+    // }
 
     componentDidMount() {
         this.props.getUsersThunkCreator();
@@ -17,16 +22,17 @@ class  listApiComponent extends React.Component<>  {
     
 
 render() {
-    return <List users={this.props.user}/>
+    
+    return <List users={this.props.users}/>
 } 
 } 
 
 
-let mapStateToProps = (state:InitialStateType) => {
+let mapStateToProps = (state: AppStatetype) => {
     
     return {
-        user: getUsers(state)
-    }
+        users: getUsers(state)
+            }
 }
 
 const ListContainer = connect(mapStateToProps,{getUsersThunkCreator})(listApiComponent)
