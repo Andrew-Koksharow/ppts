@@ -10,6 +10,8 @@ const Sort = () => {
     return (
         <div>
             <h3>Сортировка</h3>
+            <Button name={'по городу'}/>
+            <Button name={'по компании'}/>
             <div>
                 
             </div>

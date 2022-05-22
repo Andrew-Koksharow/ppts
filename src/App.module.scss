@@ -1,15 +1,17 @@
 .app {
   display: grid;
   grid-template-areas: 's u';
-  grid-template-columns: 1fr 4fr;
-  text-align: center;
+  grid-template-columns: 200px 4fr;
+  
 }
 
 .side {
   grid-area: s;
+  background-color: rgb(202, 202, 202);
 }
 
 .content {
+  padding-left: 20px;
   grid-area: u;
 }
 

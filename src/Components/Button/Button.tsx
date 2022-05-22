@@ -1,8 +1,15 @@
 import React from "react";
 
-const Button = ({onclick}: {onclick: any}) => {
-    return <div>   <button onClick={onclick}>inset</button></div>
-    
-} 
+type Props = {
+    name: string
+    onclick?: () => void
+}
+
+const Button: React.FC<Props> = ({ onclick ,  name }) => {
+    return <div>   
+        <button onClick={onclick}>{name}</button>
+        </div>
+
+}
 
 export default Button;
