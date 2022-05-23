@@ -11,24 +11,31 @@ import Profile from './Components/Profile/Profile';
 
 
 function App() {
-  
-  return (
-    <BrowserRouter>
-    <Provider store={store}>
-    <div className={s.app}>
-     <div className={s.side}><Sort /></div>
-     
-     <div className={s.content}>
-       <Routes>
-       <Route path='/' element={<ListContainer/>}></Route>
-       <Route path='/Profile/UserId' element={<Profile/>}></Route>
 
-       </Routes>
-       </div>
-     
-    </div>
+  return (
+
+    <Provider store={store}>
+      <BrowserRouter>
+        <div className={s.app}>
+          <div className={s.side}><Sort /></div>
+
+          <div className={s.content}>
+            <Routes>
+              <Route path='/' element={<ListContainer />}>
+              <Route path=':UserId' element={<Profile />}/>
+              </Route>
+              
+              
+              <Route path='*' element={<main style={{ padding: "1rem" }}>
+                <p>There's nothing here!</p>
+              </main>}></Route>
+            </Routes>
+          </div>
+
+        </div>
+      </BrowserRouter>
     </Provider>
-    </BrowserRouter>
+
   );
 }
 
