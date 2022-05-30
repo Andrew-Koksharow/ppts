@@ -6,7 +6,8 @@ import { Provider } from 'react-redux';
 import store from './redux/redux-store';
 import ListContainer from './Components/Users/ListContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Profile from './Components/Profile/Profile';
+
+import ProfileContainer from './Components/Profile/ProfileContainer';
 
 
 
@@ -21,9 +22,9 @@ function App() {
 
           <div className={s.content}>
             <Routes>
-              <Route path='/' element={<ListContainer />}>
-              <Route path=':UserId' element={<Profile />}/>
-              </Route>
+              <Route path='/' element={<ListContainer />}/>
+              <Route path='Profile/:UserId' element={<ProfileContainer />}/>
+              
               
               
               <Route path='*' element={<main style={{ padding: "1rem" }}>

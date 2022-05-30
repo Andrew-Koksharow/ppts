@@ -1,15 +1,18 @@
 import React from "react"
 import { useParams } from "react-router-dom"
+import { UserType } from "../../redux/reducers/users-reducer"
+
 
 type Props = {
-
+user: UserType | undefined
 }
 
-const Profile: React.FC<Props> = () => {
-    let params = useParams();
+const Profile: React.FC<Props> = ({user}) => {
+    
+    
     return<div>
-            <div>{params.Id}</div>
-            <div>123</div>
+            
+            <div>{}</div>
         </div>
     
 }

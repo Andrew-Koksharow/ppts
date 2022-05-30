@@ -1,8 +1,11 @@
+
 import { usersAPI } from "../../api/api";
+
 import { AppStatetype } from "../redux-store";
 
 
 const SET_USERS = 'SET_USERS';
+const SET_USER_PROFILE = 'SET_USER_PROFILE'
 
 export type UserType = {
     
@@ -19,7 +22,7 @@ export type UserType = {
             catchPhrase: string
         },
         email: string,
-        id: number,
+        id: number ,
         phone: string,
         username: string,
         website: string
@@ -44,6 +47,12 @@ const UsersReducer = (state = initialState, action: any): InitialStateType => {
                 users: action.users,
 
             }
+            // case SET_USER_PROFILE:
+            //     return {
+            //         ...state,
+            //         user: action.user
+
+            //     }
         default:
             return state
     }
@@ -66,6 +75,18 @@ export const setUsers = (users: Array<UserType>): setUsersActionType => {
     }
 }
 
+type setProfileActiontype = {
+    type: typeof SET_USER_PROFILE
+    user: UserType
+}
+
+export const setProfile = (user: UserType) : setProfileActiontype => {
+    return {
+        type: SET_USER_PROFILE,
+        user
+
+    }
+}
 
 
 export const getUsersThunkCreator = () => {
@@ -83,4 +104,9 @@ export const getUsersThunkCreator = () => {
 export const getUsers = (state: AppStatetype) => {
     return state.usersPage.users
 }
+
+
+//  export const getUser = (id:number) => {
+//      return 
+//  }
 
