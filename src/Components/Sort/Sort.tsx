@@ -6,7 +6,7 @@ import Button from "../Button/Button";
 
 
 
-const Sort = () => {
+const Sort: React.FC = () => {
     return (
         <div>
             <h3>Сортировка</h3>
