@@ -1,4 +1,5 @@
 import React from "react";
+import s from './Button.module.scss'
 
 type Props = {
     name: string
@@ -7,7 +8,7 @@ type Props = {
 
 const Button: React.FC<Props> = ({ onclick ,  name }) => {
     return <div>   
-        <button onClick={onclick}>{name}</button>
+        <button className={s.button} onClick={onclick}>{name}</button>
         </div>
 
 }
