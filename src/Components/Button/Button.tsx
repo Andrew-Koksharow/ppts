@@ -4,6 +4,7 @@ import s from './Button.module.scss'
 type Props = {
     name: string
     onclick?: () => void
+
 }
 
 const Button: React.FC<Props> = ({ onclick ,  name }) => {

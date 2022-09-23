@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import { UserType } from "../../redux/reducers/users-reducer";
 import User from "./User";
 import item from './List.module.scss'
@@ -10,7 +10,7 @@ const List: React.FC<Props> = ({ users }) => {
 
     return (
         <div>
-            <h3>Список пользователей</h3>
+            <h3>List of users</h3>
             <div>
 
                 {users.map(i =>

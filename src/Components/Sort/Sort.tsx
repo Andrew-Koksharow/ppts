@@ -1,17 +1,19 @@
 import React from "react";
-
 import Button from "../Button/Button";
+import item from './Sort.module.scss'
 
 
 
-
+function sort_city() {
+    alert('hui')
+}
 
 const Sort: React.FC = () => {
     return (
-        <div>
-            <h3>Сортировка</h3>
-            <Button name={'по городу'}/>
-            <Button name={'по компании'}/>
+        <div className={item.sort}>
+            <h3>Sorting</h3>
+            <Button name={'Company'}/>
+            <Button name={'City'} onclick={sort_city}/>
             <div>
                 
             </div>
